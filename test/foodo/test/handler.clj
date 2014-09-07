@@ -7,7 +7,7 @@
   (testing "main route"
     (let [response (app (request :get "/"))]
       (is (= (:status response) 200))
-      (is (= (:body response) "Hello World"))))
+      (is (= (:body response) "<!DOCTYPE html>\n<html><head><title>Welcome to foodo</title><link href=\"/css/screen.css\" rel=\"stylesheet\" type=\"text/css\"></head><body><h1>Hello World!</h1></body></html>"))))
 
   (testing "not-found route"
     (let [response (app (request :get "/invalid"))]
